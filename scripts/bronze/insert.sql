@@ -8,7 +8,10 @@ Script Purpose:
   Run this script to re-define the DDL structure of 'bronze' tables
 =====================================================
 */
-  
+
+USE DataWarehouse;
+SELECT DB_NAME() AS CurrentDatabase;
+SELECT name FROM sys.schemas WHERE name IN ('bronze', 'silver', 'gold');
 
 IF OBJECT_ID('bronze.crm_cust_info','U') IS NOT NULL
 	DROP TABLE bronze.crm_cust_info;
