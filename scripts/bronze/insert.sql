@@ -1,19 +1,19 @@
 /*
 =========================================================
-Stored Prodecure: Load Bronze Layer (Source -> Bronze)
+Stored Prodecure: Load Silver Layer (Bronze -> Silver)
 =========================================================
 Script Purpose:
-  This stored procedure loads data into the 'bronze' schema from external CSV files.
+  This stored procedure performs the ETL (Extract, Transform, Load) process to 
+  populate the 'silver' schema tables from the 'bronze' schema.
   It performs the following actions:
-  - Truncates the bronze tables before loading data.
-  - Uses the 'BULK INSERT' command to load data from csv Files to bronze tables.
-
+  - Truncates the silver tables before loading data.
+  - Insert transformed and cleaned data from Bronze into Silver tables.
 Parameters:
   None
   This stored procedure does not accept any parametes or return any values.
 
 Usage Example:
-  EXEC bronze.load_bronze;
+  EXEC silver.load_silver;
 ==========================================================
 */
 
